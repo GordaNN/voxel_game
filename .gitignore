@@ -1,0 +1,6 @@
+# IDE
+.vs/
+.idea/
+
+# Build files
+cmake-build-debug/
