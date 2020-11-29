@@ -20,7 +20,7 @@ set(PROJECT_SRC
 )
 
 # Shaders
-set(PROJECT_SHADERS_SRC
+set(PROJECT_SHADERS
     "shaders/voxel_vertex.glsl"
     "shaders/voxel_geometry.glsl"
     "shaders/voxel_fragment.glsl"
@@ -50,6 +50,11 @@ option(BUILD_GLFW_LIB_STATIC "Build glfw static" ON)
 
 add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/glfw-3.3.1")
 
+# lua
+option(BUILD_SHARED_LIBS "Build as shared library" OFF)
+
+add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/third-party/lua-5.4.1")
+
 # Project
 add_executable(${PROJECT_NAME} ${PROJECT_SRC})
 
@@ -69,16 +74,18 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/third-party/glad/include"
     "${CMAKE_CURRENT_SOURCE_DIR}/third-party/glfw-3.3.1/include"
+    "${CMAKE_CURRENT_SOURCE_DIR}/third-party/lua-5.4.1/include"
 )
 
 target_link_libraries(${PROJECT_NAME} 
     ${OPENGL_LIBRARY}
     glad
     glfw
+    lua
 )
 
 # Copy files to build folder
-foreach(FILE IN LISTS PROJECT_SHADERS_SRC)
+foreach(FILE IN LISTS PROJECT_SHADERS PROJECT_SCRIPTS)
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/${FILE}"
         "${CMAKE_CURRENT_BINARY_DIR}/${FILE}"
