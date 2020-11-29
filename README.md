@@ -19,10 +19,9 @@ This is an open world adventure game.
 * Double `Shift` `Ctrl` - fast movement by height
 * Mouse movement - camera rotation
 #### used libraries
-* glad
-* glfw 3.3.1
-
-also you need OpenGL 4.5
+* glad (OpenGL 4.5 core) https://glad.dav1d.de/
+* glfw 3.3.1 https://www.glfw.org/
+* lua 5.4.1 https://www.lua.org/
 
 All libraries are already included in the repository.
 
