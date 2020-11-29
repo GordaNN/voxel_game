@@ -2,5 +2,12 @@
 .vs/
 .idea/
 
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
 # Build files
 cmake-build-debug/
+build/
