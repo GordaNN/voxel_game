@@ -11,3 +11,4 @@
 # Build files
 cmake-build-debug/
 build/
+out/
