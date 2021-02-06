@@ -5,8 +5,8 @@ project(${PROJECT_CORE_NAME} VERSION ${PROJECT_VERSION} LANGUAGES C)
 # Third party
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/third-party)
 
-# Source code
-set(PROJECT_CORE_SRC
+# Project compilation
+add_library(${PROJECT_NAME} STATIC
     src/graphics/shader/shader.c
     src/graphics/shader/shader_program.c
     src/graphics/camera.c
@@ -21,13 +21,11 @@ set(PROJECT_CORE_SRC
     src/utils/containers/octree.c
     src/utils/containers/queue_static.c
     src/utils/file.c
+    src/utils/string.c
     src/world/chunk.c
     src/world/world.c
     src/system.c
-)
-
-# Project compilation
-add_library(${PROJECT_NAME} STATIC ${PROJECT_CORE_SRC})
+ "src/utils/string.c" "include/core/utils/string.h")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 11
