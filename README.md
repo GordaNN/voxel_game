@@ -1,5 +1,5 @@
 # Survival Voxel Sandbox Game
-##### build 0.0.1 alpha
+##### version 0.0.1 alpha
 
 
 ### Description
@@ -12,12 +12,12 @@ This is an open world adventure game.
 * Camera rotation
 
 ### Control
-* `Esc` - exit
+* `Escape` - exit
 * `W` `A` `S` `D` - movement
-* Double `W` `A` `S` `D` - fast movement
-* `Shift` `Ctrl` - movement by height
-* Double `Shift` `Ctrl` - fast movement by height
+* `Space` `Left Control` - movement by height
+* `Left Shift` - fast movement
 * Mouse movement - camera rotation
+
 #### used libraries
 * glad (OpenGL 4.5 core) https://glad.dav1d.de/
 * glfw 3.3.1 https://www.glfw.org/

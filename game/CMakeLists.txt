@@ -2,13 +2,12 @@ cmake_minimum_required(VERSION 3.8)
 
 project(${PROJECT_GAME_NAME} VERSION ${PROJECT_VERSION} LANGUAGES C)
 
-# Source code
-set(PROJECT_CORE_SRC
-    src/main.c
-)
-
 # Project compilation
-add_executable(${PROJECT_NAME} ${PROJECT_CORE_SRC})
+add_executable(${PROJECT_NAME} 
+    src/application/application.c
+    src/application/binder.c
+    src/ui/main.c
+ )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 11
@@ -22,6 +21,9 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     $<$<CONFIG:Release>:-O2;-MT;-DNDEBUG>
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_CORE_INCULE_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${PROJECT_CORE_INCULE_DIR}
+)
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_CORE_NAME})

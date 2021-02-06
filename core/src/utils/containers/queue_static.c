@@ -66,7 +66,7 @@ void queue_static_clear(
 bool queue_static_is_empty(
         const queue_static_t* queue_p)
 {
-    return queue_p->push_index == queue_p->pop_index;
+    return queue_p->push_index == queue_p->pop_index || queue_p->array_p == NULL;
 }
 
 /* This function gets top element of static queue */

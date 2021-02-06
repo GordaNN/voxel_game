@@ -13,8 +13,8 @@
 #include "core/math/vector.h"
 
 /* This function move point by speed and direction's rotation */
-vec3f_t move_point(
-        vec3f_t point,
+vec3d_t physics_move_point(
+        vec3d_t point,
         vec3f_t rotation,
         vec3f_t speed,
         float   delta_time);

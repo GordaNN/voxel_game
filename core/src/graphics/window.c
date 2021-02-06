@@ -64,6 +64,8 @@ bool window_create(
 
     glfwSetInputMode((GLFWwindow*)window_p->window_p, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glfwSetCursorPos((GLFWwindow*)window_p->window_p, 0, 0);
+    if (glfwRawMouseMotionSupported())
+        glfwSetInputMode((GLFWwindow*)window_p->window_p, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
 
     glfwSetKeyCallback((GLFWwindow*)window_p->window_p, window_key_callback);
     glfwSetCursorPosCallback((GLFWwindow*)window_p->window_p, window_cursor_pos_callback);

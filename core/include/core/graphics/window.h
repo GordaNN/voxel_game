@@ -12,9 +12,9 @@
 #include <stdbool.h>
 #include "core/utils/containers/queue_static.h"
 
-#define CORE_RELEASE    0
-#define CORE_PRESS      1
-#define CORE_REPEAT     2
+#define CORE_KEY_RELEASE    0
+#define CORE_KEY_PRESS      1
+#define CORE_KEY_REPEAT     2
 
 #define CORE_KEY_UNKNOWN        -1
 #define CORE_KEY_SPACE          32

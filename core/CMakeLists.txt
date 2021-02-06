@@ -26,7 +26,7 @@ add_library(${PROJECT_NAME} STATIC
     src/world/chunk.c
     src/world/world.c
     src/system.c
- "include/core/physics/movement.h" "src/physics/movement.c")
+)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 11
