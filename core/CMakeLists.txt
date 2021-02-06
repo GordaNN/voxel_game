@@ -18,6 +18,7 @@ add_library(${PROJECT_NAME} STATIC
     src/math/matrix.c
     src/math/noise.c
     src/math/vector.c
+    src/physics/movement.c
     src/utils/containers/octree.c
     src/utils/containers/queue_static.c
     src/utils/file.c
@@ -25,7 +26,7 @@ add_library(${PROJECT_NAME} STATIC
     src/world/chunk.c
     src/world/world.c
     src/system.c
-)
+ "include/core/physics/movement.h" "src/physics/movement.c")
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 11
