@@ -25,7 +25,7 @@ add_library(${PROJECT_NAME} STATIC
     src/world/chunk.c
     src/world/world.c
     src/system.c
- "src/utils/string.c" "include/core/utils/string.h")
+)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     C_STANDARD 11
